@@ -19,6 +19,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.divide(10,5),2)
         self.assertEqual(calc.divide(-3,4),-1)
         self.assertEqual(calc.divide(-3,-4),0)
+        self.assertRaises(ValueError,calc.divide,10,0)
+        with self.assertRaises(ValueError):
+            calc.divide(10,0)
 
 '''You need to add the below lines if you are executing this script from the command
 line using 'python test_calc.py' -> meaning python interpreter checks the if condition
